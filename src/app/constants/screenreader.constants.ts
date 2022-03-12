@@ -1,12 +1,9 @@
 import { TabLabelAndContent } from 'src/app/models/tabs.config';
 
 export enum ScreenreaderName {
-    ChromeVox = 'ChromeVox',
     Jaws = 'JAWS',
-    Narrator = 'Narrator',
     Nvda = 'NVDA',
     Other = 'Other',
-    SystemAccess = 'System Access',
     VoiceOver = 'VoiceOver',
     ZoomTextFusion = 'ZoomText/Fusion',
 }
@@ -39,19 +36,7 @@ export const SCREENREADER_TABS: TabLabelAndContent<ScreenreaderName>[] = [
             + ' which includes a built-in screen reader. (© Wikipedia)',
     },
     {
-        label: ScreenreaderName.SystemAccess,
-        content: 'System Access is a free web-activated screen reader developed by Serotek.',
-    },
-    {
-        label: ScreenreaderName.Narrator,
-        content: 'Narrator is a screen-reading app that\'s built into Windows 10 and 11.',
-    },
-    {
-        label: ScreenreaderName.ChromeVox,
-        content: 'ChromeVox is an extension for Chrome on Windows and Mac OS X which operates as an alternative screen reader for Web content.',
-    },
-    {
         label: ScreenreaderName.Other,
-        content: 'Other available screen readers include TalkBack, Orca and BRLTTY.',
+        content: 'Other primary desktop/laptop screen readers include System Access, Narrator and ChromeVox.',
     },
 ];

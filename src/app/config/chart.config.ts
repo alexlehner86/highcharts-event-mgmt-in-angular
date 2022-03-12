@@ -28,15 +28,13 @@ export const EXAMPLE_CHART: Highcharts.Options = {
     series: [
         {
             color: '#158528',
+            cursor: 'pointer',
             data: [
                 [ScreenreaderName.Jaws, 53.7],
                 [ScreenreaderName.Nvda, 30.7],
                 [ScreenreaderName.VoiceOver, 6.5],
                 [ScreenreaderName.ZoomTextFusion, 4.7],
-                [ScreenreaderName.SystemAccess, 0.8],
-                [ScreenreaderName.Narrator, 0.5],
-                [ScreenreaderName.ChromeVox, 0.3],
-                [ScreenreaderName.Other, 2.8],
+                [ScreenreaderName.Other, 4.4],
             ],
             name: 'Worldwide',
             type: 'column',
@@ -51,6 +49,7 @@ export const EXAMPLE_CHART: Highcharts.Options = {
                     width: 10,
                 } as any
             },
+            cursor: 'pointer',
             data: [
                 [ScreenreaderName.Jaws, 40.2],
                 [ScreenreaderName.Nvda, 41.6],
@@ -71,9 +70,6 @@ export const EXAMPLE_CHART: Highcharts.Options = {
             ScreenreaderName.Nvda,
             ScreenreaderName.VoiceOver,
             ScreenreaderName.ZoomTextFusion,
-            ScreenreaderName.SystemAccess,
-            ScreenreaderName.Narrator,
-            ScreenreaderName.ChromeVox,
             ScreenreaderName.Other,
         ],
     },
