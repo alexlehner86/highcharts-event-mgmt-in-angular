@@ -13,8 +13,7 @@ export const SCREENREADER_TABS: TabLabelAndContent<ScreenreaderName>[] = [
         label: ScreenreaderName.Jaws,
         content:
             'JAWS ("Job Access With Speech") is a computer screen reader program for Microsoft Windows that allows blind and visually impaired users'
-            + ' to read the screen either with a text-to-speech output or by a refreshable Braille display. JAWS is produced by the Blind and'
-            + ' Low Vision Group of Freedom Scientific. (© Wikipedia)',
+            + ' to read the screen with a text-to-speech output. JAWS is produced by the Blind and Low Vision Group of Freedom Scientific. (© Wikipedia)',
     },
     {
         label: ScreenreaderName.Nvda,
