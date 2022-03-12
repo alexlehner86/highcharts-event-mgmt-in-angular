@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: lightgrey;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+// Angular Material overrides
+.mat-tab-group {
+    .mat-tab-header .mat-tab-label-container .mat-tab-label {
+        min-width: 4rem;
+
+        &.mat-tab-label-active {
+            color: #3f51b5;
+            opacity: 1;
+        }
+    }
+
+    .mat-tab-body .mat-tab-body-content {
+        padding: 1rem 0.5rem;
+    }
+}

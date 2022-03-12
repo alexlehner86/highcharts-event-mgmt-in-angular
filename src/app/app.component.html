@@ -1,15 +1,34 @@
 <h1>Highcharts/Angular Event Management</h1>
-<p>test lorem ipsum dolum</p>
 <p>
-    Data source:
+    This demo shows how to link chart events (e.g. point click) to their Angular parent component.
+    Once the chart is created, we add functions as custom properties to the chart instance.
+    This allows chart event handlers to communicate with the Angular component that hosts the chart.
+    In our case, when a column is clicked, the component selects the corresponding tab panel.
+</p>
+<mat-tab-group class="mat-elevation-z2" [selectedIndex]="selectedTabIndex">
+    <mat-tab
+        *ngFor="let tab of screenreaderTabs"
+        [label]="tab.label"
+    >
+        {{tab.content}}
+    </mat-tab>
+</mat-tab-group>
+<highcharts-chart
+    [Highcharts]="highchartsLib"
+    [options]="chartOptions"
+    (chartInstance)="addCustomPropertiesToChart($event)"
+></highcharts-chart>
+<p id="highcharts-description-1">
+    More than half of the respondents (53.7%) use JAWS as their primary desktop/laptop screen reader.
+    About a third (30.7%) use NVDA, followed by VoiceOver (6.5%) and ZoomText/Fusion (4.7%). Very few
+    respondents primarily use System Access (0.8%), Narrator (0.5%) or ChromeVox(0.3%). The remaining
+    respondents (2.8%) named other screen readers. In Europe, JAWS usage was lower than NVDA in Europe
+    (40.2% vs. 41.6%). Data source:
     <a
-        href="https://webaim.org/projects/screenreadersurvey9/#primary"
+        href="https://webaim.org/projects/screenreadersurvey9/"
         target="_blank"
+        rel="noopener noreferrer"
     >
         Screen Reader User Survey #9
     </a>
 </p>
-<highcharts-chart
-    [Highcharts]="highchartsLib"
-    [options]="chartOptions"
-></highcharts-chart>

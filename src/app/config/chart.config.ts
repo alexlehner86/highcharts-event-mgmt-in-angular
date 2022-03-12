@@ -1,21 +1,42 @@
 import * as Highcharts from 'highcharts';
+import { ScreenreaderName } from 'src/app/constants/screenreader.constants';
+import { MyExampleChart } from 'src/app/models/example-chart.interface';
 
 export const EXAMPLE_CHART: Highcharts.Options = {
+    accessibility: {
+        enabled: true,
+        keyboardNavigation: {
+            enabled: false,
+        },
+        linkedDescription: '#highcharts-description-1',
+    },
     credits: {
         enabled: false,
+    },
+    plotOptions: {
+        series: {
+            point: {
+                events: {
+                    click: function(this) {
+                        const chart = this.series.chart as MyExampleChart;
+                        chart.onSeriesPointClick(this.name as ScreenreaderName);
+                    }
+                }
+            }
+        }
     },
     series: [
         {
             color: '#158528',
             data: [
-                ['JAWS', 53.7],
-                ['NVDA', 30.7],
-                ['VoiceOver', 6.5],
-                ['ZoomText/Fusion', 4.7],
-                ['System Access', 0.8],
-                ['Narrator', 0.5],
-                ['ChromeVox', 0.3],
-                ['Other', 2.8],
+                [ScreenreaderName.Jaws, 53.7],
+                [ScreenreaderName.Nvda, 30.7],
+                [ScreenreaderName.VoiceOver, 6.5],
+                [ScreenreaderName.ZoomTextFusion, 4.7],
+                [ScreenreaderName.SystemAccess, 0.8],
+                [ScreenreaderName.Narrator, 0.5],
+                [ScreenreaderName.ChromeVox, 0.3],
+                [ScreenreaderName.Other, 2.8],
             ],
             name: 'Worldwide',
             type: 'column',
@@ -31,8 +52,8 @@ export const EXAMPLE_CHART: Highcharts.Options = {
                 } as any
             },
             data: [
-                ['JAWS', 40.2],
-                ['NVDA', 41.6],
+                [ScreenreaderName.Jaws, 40.2],
+                [ScreenreaderName.Nvda, 41.6],
             ],
             name: 'Europe',
             type: 'column',
@@ -42,11 +63,18 @@ export const EXAMPLE_CHART: Highcharts.Options = {
         text: '',
     },
     title: {
-        text: 'Primary desktop/laptop screen reader',
+        text: 'Primary desktop/laptop screen reader (2021)',
     },
     xAxis: {
         categories: [
-            'NVDA', 'JAWS', 'VoiceOver', 'ZoomText/Fusion', 'System Access', 'Narrator', 'ChromeVox', 'Other'
+            ScreenreaderName.Jaws,
+            ScreenreaderName.Nvda,
+            ScreenreaderName.VoiceOver,
+            ScreenreaderName.ZoomTextFusion,
+            ScreenreaderName.SystemAccess,
+            ScreenreaderName.Narrator,
+            ScreenreaderName.ChromeVox,
+            ScreenreaderName.Other,
         ],
     },
     yAxis: {

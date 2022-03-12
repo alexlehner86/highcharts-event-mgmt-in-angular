@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HighchartsChartModule } from 'highcharts-angular';
 
 import { AppComponent } from './app.component';
@@ -9,8 +10,9 @@ import { AppComponent } from './app.component';
         AppComponent
     ],
     imports: [
-        BrowserModule,
+        BrowserAnimationsModule,
         HighchartsChartModule,
+        MatTabsModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
