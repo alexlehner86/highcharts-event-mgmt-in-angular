@@ -22,10 +22,10 @@ export class AppComponent {
     public selectedTabIndex = 0;
 
     public addCustomPropertiesToChart(chartInstance: Highcharts.Chart): void {
-        (chartInstance as MyExampleChart).onSeriesPointClick = (name) => this.onSeriesPointClick(name);
+        (chartInstance as MyExampleChart).onSeriesPointClick = (name) => this.selectScreenreaderTab(name);
     }
 
-    public onSeriesPointClick(name: ScreenreaderName): void {
+    public selectScreenreaderTab(name: ScreenreaderName): void {
         const matchingTabIndex = this.screenreaderTabs.findIndex(tab => tab.label === name);
         if (matchingTabIndex >= 0) {
             this.selectedTabIndex = matchingTabIndex;
